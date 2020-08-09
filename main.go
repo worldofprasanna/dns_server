@@ -75,7 +75,7 @@ func FetchIPForDomain(domain string) string {
 		ips, err := net.LookupIP(domain)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Could not get IPs: %v\n", err)
-			os.Exit(1)
+			return "0.0.0.0"
 		}
 		for _, addr := range ips {
 			ip = addr.String()
